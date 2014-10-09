@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/citi"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="我的借入款"
+        android:textColor="@color/white"
+        android:textSize="33sp" />
+
+    <RelativeLayout
+        android:id="@+id/login_div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="30dip"
+        android:background="@drawable/background_login_div_bg1"
+        android:padding="15dip" >
+
+        <TextView
+            android:id="@+id/user_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="借款凭据ID："
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_myBorrowRuId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_toRightOf="@id/user_1"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login_div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/background_login_div_bg1"
+        android:padding="15dip" >
+
+        <TextView
+            android:id="@+id/user_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="借出人ID："
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_myBorrowChuUser"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_toRightOf="@id/user_2"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login_div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/background_login_div_bg1"
+        android:padding="15dip" >
+
+        <TextView
+            android:id="@+id/user_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="借入金额："
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_myBorrowRuSum"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_toRightOf="@id/user_3"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login_div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/background_login_div_bg1"
+        android:padding="15dip" >
+
+        <TextView
+            android:id="@+id/user_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="借入时间："
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_myBorrowRuTime"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_toRightOf="@id/user_4"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login_div"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/background_login_div_bg1"
+        android:padding="15dip" >
+
+        <TextView
+            android:id="@+id/user_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="约定还款时间："
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_myBorrowRepayTime"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_toRightOf="@id/user_5"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="5dip"
+        android:gravity="center_horizontal"
+        android:padding="15dip" >
+
+        <Button
+            android:id="@+id/button_myBorrowItem_repay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/most_btn"
+            android:text="快速还款" />
+
+        <Button
+            android:id="@+id/button_myBorrowItem_renew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/button_myBorrowItem_repay"
+            android:background="@drawable/most_btn"
+            android:text="申请展期 " />
+    </RelativeLayout>
+
+</LinearLayout>

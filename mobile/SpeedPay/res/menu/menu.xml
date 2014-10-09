@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+ <item   
+        android:id="@+id/open"   
+        android:title="开启挥手发送"   />  
+    <item   
+        android:id="@+id/toHome"   
+        android:title="回到主页"   />  
+    <item   
+        android:id="@+id/sign_out"   
+        android:title="退出"   />  
+</menu>

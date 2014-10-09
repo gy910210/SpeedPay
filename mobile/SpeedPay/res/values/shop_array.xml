@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="shop_type">
+		<item>dinner</item>
+		<item>hotel</item>
+		<item>transport</item>
+		<item>entertainment</item>
+		<item>shopping</item>
+		<item>others</item>
+	</string-array>
+</resources>

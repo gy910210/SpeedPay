@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.speedpay"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 读取联系人权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 访问精确位置的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 访问网络状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 访问WIFI网络状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 改变WIFI网络状态的权限 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 读写存储卡的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 读取电话状态的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".ui.LogoActivity"
+            android:label="@string/app_name"
+            android:theme="@style/theme_fullScreen" >
+            <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:theme="@style/theme_fullScreen" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/theme_fullScreen" >
+            <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+        
+		<activity
+            android:name=".ui.UserInfoActivity"
+            android:theme="@style/theme_fullScreen" />
+		
+		<activity
+            android:name=".ui.UserInfoModifyActivity"
+            android:theme="@style/theme_fullScreen" />
+		
+		<activity
+            android:name=".ui.CameraTestActivity"
+            android:theme="@style/theme_fullScreen" />
+		
+		<activity
+            android:name=".ui.MarketMakeErcodeActivity"
+            android:theme="@style/theme_fullScreen" 
+            android:screenOrientation="landscape"/>
+		
+		<activity
+            android:name=".ui.UserMakeErcodeActivity"
+            android:theme="@style/theme_fullScreen" >
+		</activity>
+		
+		<activity
+            android:name=".ui.MessageListActivity"
+            android:theme="@style/AppTheme" >
+            <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+		
+		<activity
+            android:name=".ui.MyTradeActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+		
+		<activity
+            android:name=".ui.BorrowActivity"
+            android:theme="@style/theme_fullScreen" />
+		
+		<activity
+            android:name=".ui.MyBorrowRuItemActivity"
+            android:theme="@style/theme_fullScreen" />
+		
+		<activity
+            android:name=".ui.MyBorrowChuItemActivity"
+            android:theme="@style/theme_fullScreen" />
+		
+		<!-- <activity
+            android:name=".ui.utils.GestrureActivity"
+            android:theme="@style/theme_fullScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> -->
+		
+		<activity
+            android:name=".ui.TestSpeedPayNewActivity"
+            android:theme="@style/theme_fullScreen" >
+        </activity>
+        
+		<activity
+            android:name=".ui.SpeedPayStartActivity"
+            android:theme="@style/theme_fullScreen" >
+           <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		
+		<receiver
+            android:name=".receiver.AlarmReceiver"
+            android:process=":remote" />
+		
+        <service android:name=".logic.MainService" />
+    </application>
+
+</manifest>

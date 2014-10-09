@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="server" namespace="/" extends="struts-default">
+		<action name="index" class="indexAction">
+			<result name="success">/WEB-INF/jsp/index.jsp</result>
+		</action>
+		<action name="userlogin" class="userLoginAction">
+			<result name="success" type="redirectAction">usercenter</result>
+			<result name="input">/WEB-INF/jsp/index.jsp</result>
+			<result name="fail">/WEB-INF/jsp/index.jsp</result>
+		</action>
+
+		<action name="userregister*" class="userRegisterAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/userregister.jsp</result>
+			<result name="input">/WEB-INF/jsp/userregister.jsp</result>
+			<result name="fail">/WEB-INF/jsp/userregister.jsp</result>
+			<result name="add">/WEB-INF/jsp/index.jsp</result>
+		</action>
+
+		<action name="usercenter*" class="userCenterAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/usercenter.jsp</result>
+			<result name="password" type="redirectAction">usercenter
+			</result>
+			<result name="info" type="redirectAction">usercenter</result>
+			<result name="passworded" type="redirectAction">usercenter</result>
+			<result name="infoed" type="redirectAction">usercenter</result>
+			<result name="input">/WEB-INF/jsp/usercenter.jsp</result>
+			<result name="fail">/WEB-INF/jsp/usercenter.jsp</result>
+			<result name="paypsd" type="redirectAction">usercenter</result>
+		</action>
+
+		<action name="userquery*" class="userQueryAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/userquery.jsp</result>
+			<result name="type">/WEB-INF/jsp/queryresult.jsp</result>
+		</action>
+
+		<action name="admin" class="adminAction">
+			<result name="success">/WEB-INF/jsp/adminlogin.jsp</result>
+		</action>
+
+		<action name="adminlogin*" class="adminLoginAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/adminmanage.jsp</result>
+			<result name="login" type="redirectAction">adminlogin</result>
+			<result name="input">/WEB-INF/jsp/adminlogin.jsp</result>
+			<result name="fail">/WEB-INF/jsp/adminlogin.jsp</result>
+		</action>
+
+		<action name="admincheck" class="adminCheckAction">
+			<result name="success" type="redirectAction">adminlogin</result>
+		</action>
+
+
+		<!-- client的Action -->
+		<action name="userloginclient" class="userLoginClientAction"
+			method="doAction">
+		</action>
+
+		<action name="userInfoModifyClient" class="userInfoModifyClientAction"
+			method="doAction">
+		</action>
+
+		<action name="insertPurchaseContentClient" class="insertPurchaseContentClientAction"
+			method="doAction">
+		</action>
+
+		<action name="insertConsumptionProofClient" class="insertConsumptionProofClientAction"
+			method="doAction">
+		</action>
+
+		<action name="getUserClient" class="getUserClientAction"
+			method="doAction">
+		</action>
+
+		<action name="insertWithdrawProofClient" class="insertWithdrawProofClientAction"
+			method="doAction">
+		</action>
+
+		<action name="insertTransferProofClient" class="insertTransferProofClientAction"
+			method="doAction">
+		</action>
+
+		<action name="insertBorrowProofClient" class="insertBorrowProofClientAction"
+			method="doAction">
+		</action>
+
+		<action name="insertMessageClient" class="insertMessageClientAction"
+			method="doAction">
+		</action>
+
+		<action name="myBorrowClient" class="myBorrowClientAction"
+			method="doAction">
+		</action>
+
+		<action name="myBorrowChuClient" class="myBorrowChuClientAction"
+			method="doAction">
+		</action>
+
+		<action name="myMessageClient" class="myMessageClientAction"
+			method="doAction">
+		</action>
+
+		<action name="myTradeClient" class="myTradeClientAction"
+			method="doAction">
+		</action>
+
+		<action name="insertRepayProofClient" class="insertRepayProofClientAction"
+			method="doAction">
+		</action>
+
+		<action name="insertRenewalApplyClient" class="insertRenewalApplyClientAction"
+			method="doAction">
+		</action>
+
+		<action name="okRenewalApplyClient" class="okRenewalApplyClientAction"
+			method="doAction">
+		</action>
+
+		<action name="getMessageClient" class="getMessageClientAction"
+			method="doAction">
+		</action>
+
+		<action name="isUserClient" class="isUserClientAction" method="doAction">
+		</action>
+
+		<action name="deleteMessageClient" class="deleteMessageClientAction"
+			method="doAction">
+		</action>
+
+		<action name="insertQrCodeClient" class="insertQrCodeClientAction"
+			method="doAction">
+		</action>
+
+		<action name="checkQrCodeClient" class="checkQrCodeClientAction"
+			method="doAction">
+		</action>
+
+		<action name="setQrCodeClient" class="setQrCodeClientAction"
+			method="doAction">
+		</action>
+
+		<action name="checkPaypasswordClient" class="checkPaypasswordClientAction"
+			method="doAction">
+		</action>
+	</package>
+
+	<!-- <package name="json" namespace="/" extends="json-default"> <action 
+		name="userloginclient" class="userLoginClientAction"> <result type="json" 
+		name="success"></result> </action> </package> -->
+
+</struts>    

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/citi4">
+    <ListView 
+        android:id="@+id/listView_myborrow" 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:dividerHeight="20px"
+		android:layout_margin="6px"></ListView>
+
+</LinearLayout>

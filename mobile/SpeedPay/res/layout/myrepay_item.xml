@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:gravity="center_vertical"
+    android:background="@drawable/list_click_green">
+
+    <ImageView
+        android:id="@+id/myrepay_itemLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_margin="5px"
+        android:src="@drawable/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/myrepay_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="aaaaa"
+            android:textSize="25sp" />
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="SpeedPay"
+  id="myeclipse.1375547690813"
+  context-root="/SpeedPay"
+  j2ee-spec="6.0"
+  archive="SpeedPay.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

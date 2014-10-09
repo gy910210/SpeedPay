@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/signed_out_2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="欢迎来到快捷取款"
+        android:textSize="35sp" 
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"/>
+    <LinearLayout
+        android:id="@+id/login_div"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="50dip"
+        android:orientation="vertical"
+        android:background="@drawable/background_login_div_bg1">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="请选择取款金额:"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup_atmMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"
+        android:layout_marginTop="20dip">
+
+        <RadioButton
+            android:id="@+id/radio_atm100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="100元" />
+
+        <RadioButton
+            android:id="@+id/radio_atm200"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200元" />
+
+        <RadioButton
+            android:id="@+id/radio_atm400"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="500元" />
+         <RadioButton
+            android:id="@+id/radio_atmOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="其他金额" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/input_atmSum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="number" 
+        android:visibility="invisible"
+        android:hint="请输入金额">
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button_atm_makeErcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/most_btn"
+        android:text="生成二维码" />
+	</LinearLayout>
+   
+
+</LinearLayout>

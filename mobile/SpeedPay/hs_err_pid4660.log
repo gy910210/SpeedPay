@@ -1,0 +1,104 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:3494), pid=4660, tid=6112
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 6.0_37-b06
+# Java VM: Java HotSpot(TM) Client VM (20.12-b01 mixed mode windows-x86 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x001d9800):  JavaThread "Unknown thread" [_thread_in_vm, id=6112, stack(0x01140000,0x01190000)]
+
+Stack: [0x01140000,0x01190000],  sp=0x0118f870,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x13471a]
+V  [jvm.dll+0x12f20b]
+V  [jvm.dll+0x167de]
+V  [jvm.dll+0x1802f]
+V  [jvm.dll+0x275a5]
+V  [jvm.dll+0x27de6]
+V  [jvm.dll+0x28195]
+V  [jvm.dll+0x28229]
+V  [jvm.dll+0x282ec]
+V  [jvm.dll+0x2836a]
+V  [jvm.dll+0x2844d]
+V  [jvm.dll+0x28719]
+V  [jvm.dll+0x6ce03]
+V  [jvm.dll+0x6d1dc]
+V  [jvm.dll+0xfa6dc]
+V  [jvm.dll+0x11902b]
+V  [jvm.dll+0x9f4e0]
+C  [javaw.exe+0x1657]
+C  [javaw.exe+0x1e2c]
+C  [javaw.exe+0x8614]
+C  [KERNEL32.DLL+0x173e]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x56911]  LdrInitializeThunk+0x1f0
+C  [ntdll.dll+0x568bd]  LdrInitializeThunk+0x19c
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x001d9800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=6112, stack(0x01140000,0x01190000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	A:\Program Files\Java\jre6\bin\javaw.exe
+0x778e0000 - 0x77a48000 	A:\Windows\SYSTEM32\ntdll.dll
+0x75360000 - 0x75458000 	A:\Windows\system32\KERNEL32.DLL
+0x74d30000 - 0x74ded000 	A:\Windows\system32\KERNELBASE.dll
+0x75580000 - 0x7562e000 	A:\Windows\system32\ADVAPI32.dll
+0x76590000 - 0x766b1000 	A:\Windows\system32\USER32.dll
+0x76110000 - 0x761c1000 	A:\Windows\system32\msvcrt.dll
+0x75990000 - 0x759c4000 	A:\Windows\SYSTEM32\sechost.dll
+0x762e0000 - 0x763b1000 	A:\Windows\system32\RPCRT4.dll
+0x761d0000 - 0x762da000 	A:\Windows\system32\GDI32.dll
+0x763d0000 - 0x763fb000 	A:\Windows\system32\IMM32.DLL
+0x75020000 - 0x750fd000 	A:\Windows\system32\MSCTF.dll
+0x7c340000 - 0x7c396000 	A:\Program Files\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6daa0000 	A:\Program Files\Java\jre6\bin\client\jvm.dll
+0x74c70000 - 0x74c91000 	A:\Windows\system32\WINMM.dll
+0x74bb0000 - 0x74bda000 	A:\Windows\system32\WINMMBASE.dll
+0x6e630000 - 0x6e6d7000 	A:\Windows\system32\apphelp.dll
+0x6d7a0000 - 0x6d7ac000 	A:\Program Files\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	A:\Program Files\Java\jre6\bin\java.dll
+0x6d7e0000 - 0x6d7ef000 	A:\Program Files\Java\jre6\bin\zip.dll
+0x76100000 - 0x76106000 	A:\Windows\system32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK -Xbootclasspath:A:\Java开发\adt-bundle-windows-x86-20130219\sdk\platforms\android-17\android.jar 
+java_command: com.speedpay.utils.DESCrypto
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=A:/Program Files/Java/jre6/bin/client;A:/Program Files/Java/jre6/bin;A:/Program Files/Java/jre6/lib/i386;A:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\bin\;A:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\libnvvp\;A:\Windows\system32;A:\Windows;A:\Windows\System32\Wbem;A:\Windows\System32\WindowsPowerShell\v1.0\;A:\Program Files\Microsoft\Web Platform Installer\;A:\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;A:\Program Files\Windows Kits\8.0\Windows Performance Toolkit\;A:\Program Files\Microsoft SQL Server\110\Tools\Binn\;A:\Program Files\MySQL\MySQL Server 5.0\bin;A:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\Win32 ;A:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\bin ;A:\ProgramData\NVIDIA Corporation\CUDA Samples\v5.0\common \lib\Win32 ;A:\ProgramData\NVIDIA Corporation\CUDA Samples\v5.0\common \bin\Win32 ;a:\Program Files\Microsoft SQL Server\100\Tools\Binn\;a:\Program Files\Microsoft SQL Server\100\DTS\Binn\;A:\Java开发\apache-maven-2.2.1\bin;A:\Program Files\Windows Live\Shared;A:\Program Files\MATLAB\R2013a\runtime\win32;A:\Program Files\MATLAB\R2013a\bin;A:\Java开发\adt-bundle-windows-x86-20130219\eclipse;
+USERNAME=GongYu
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 37 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.2 Build 9200 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 2022244k(144528k free), swap 5036900k(1349572k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.12-b01) for windows-x86 JRE (1.6.0_37-b06), built on Sep 24 2012 12:44:35 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Wed Aug 28 16:08:57 2013
+elapsed time: 0 seconds
+

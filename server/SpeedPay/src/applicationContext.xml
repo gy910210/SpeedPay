@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/speedpay?useUnicode=true&amp;characterEncoding=utf8">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>speedpay/dao/Withdrawproof.hbm.xml</value>
+				<value>speedpay/dao/Consumptionproof.hbm.xml</value>
+				<value>speedpay/dao/User.hbm.xml</value>
+				<value>speedpay/dao/Repayproof.hbm.xml</value>
+				<value>speedpay/dao/Purchasecontent.hbm.xml</value>
+				<value>speedpay/dao/Transferproof.hbm.xml</value>
+				<value>speedpay/dao/Admin.hbm.xml</value>
+				<value>speedpay/dao/Renewalapply.hbm.xml</value>
+				<value>speedpay/dao/Borrowproof.hbm.xml</value>
+				<value>speedpay/dao/Goods.hbm.xml</value>
+				<value>speedpay/dao/GoodsContent.hbm.xml</value>
+				<value>speedpay/dao/Message.hbm.xml</value>
+				<value>speedpay/dao/Qrcode.hbm.xml</value>
+		</list>
+		</property></bean>
+	<bean id="userRegisterAction" class="speedpay.action.server.UserRegisterAction" abstract="false"
+			lazy-init="default" autowire="default" scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	<bean id="GoodsDAO" class="speedpay.dao.GoodsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="BorrowproofDAO" class="speedpay.dao.BorrowproofDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="GoodsContentDAO" class="speedpay.dao.GoodsContentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TransferproofDAO" class="speedpay.dao.TransferproofDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="PurchasecontentDAO"
+		class="speedpay.dao.PurchasecontentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RepayproofDAO" class="speedpay.dao.RepayproofDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserDAO" class="speedpay.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ConsumptionproofDAO"
+		class="speedpay.dao.ConsumptionproofDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="WithdrawproofDAO" class="speedpay.dao.WithdrawproofDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RenewalapplyDAO" class="speedpay.dao.RenewalapplyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MessageDAO" class="speedpay.dao.MessageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AdminDAO" class="speedpay.dao.AdminDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="QrcodeDAO" class="speedpay.dao.QrcodeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+		<!-- server -->
+	<!-- shang  -->
+	<bean id="indexAction" class="speedpay.action.server.IndexAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="session">
+	</bean>
+	
+	<bean id="userLoginAction" class="speedpay.action.server.UserLoginAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="session">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="userCenterAction" class="speedpay.action.server.UserCenterAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="userQueryAction" class="speedpay.action.server.UserQueryAction" abstract="false"
+			lazy-init="default" autowire="default"   scope="prototype" >
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="adminAction" class="speedpay.action.server.AdminAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype" >
+	</bean>
+	
+	<bean id="adminLoginAction" class="speedpay.action.server.AdminLoginAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype" >
+		<property name="adminDao">
+			<ref bean="AdminDAO" />
+		</property>	
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="adminCheckAction" class="speedpay.action.server.AdminCheckAction" abstract="false"
+		lazy-init="default" autowire="default"  scope="prototype" >
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	
+	<!-- gong yu -->
+	<bean id="userLoginClientAction" class="speedpay.action.client.UserLoginClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="userInfoModifyClientAction" class="speedpay.action.client.UserInfoModifyClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="insertPurchaseContentClientAction" class="speedpay.action.client.InsertPurchaseContentClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+		<property name="purchasecontentDao">
+			<ref bean="PurchasecontentDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="insertConsumptionProofClientAction" class="speedpay.action.client.InsertConsumptionProofClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+		<property name="consumptionproofDao">
+			<ref bean="ConsumptionproofDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="getUserClientAction" class="speedpay.action.client.GetUserClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="insertWithdrawProofClientAction" class="speedpay.action.client.InsertWithdrawProofClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+		<property name="withdrawproofDao">
+			<ref bean="WithdrawproofDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="insertTransferProofClientAction" class="speedpay.action.client.InsertTransferProofClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+		<property name="transferproofDao">
+			<ref bean="TransferproofDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="insertBorrowProofClientAction" class="speedpay.action.client.InsertBorrowProofClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+		<property name="borrowproofDao">
+			<ref bean="BorrowproofDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="insertMessageClientAction" class="speedpay.action.client.InsertMessageClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+		<property name="messageDao">
+			<ref bean="MessageDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="myBorrowClientAction" class="speedpay.action.client.MyBorrowClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="myBorrowChuClientAction" class="speedpay.action.client.MyBorrowChuClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="myMessageClientAction" class="speedpay.action.client.MyMessageClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="myTradeClientAction" class="speedpay.action.client.MyTradeClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>	
+	</bean>
+	
+	<bean id="insertRepayProofClientAction" class="speedpay.action.client.InsertRepayProofClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>
+		<property name="borrowproofDao">
+			<ref bean="BorrowproofDAO" />
+		</property>
+		<property name="repayproofDao">
+			<ref bean="RepayproofDAO" />
+		</property>
+	</bean>
+	
+	
+	<bean id="insertRenewalApplyClientAction" class="speedpay.action.client.InsertRenewalApplyClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="borrowproofDao">
+			<ref bean="BorrowproofDAO" />
+		</property>
+		<property name="renewalapplyDao">
+			<ref bean="RenewalapplyDAO" />
+		</property>
+		<property name="userDao">
+			<ref bean="UserDAO"/>
+		</property>
+		
+		<property name="messageDao">
+			<ref bean="MessageDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="okRenewalApplyClientAction" class="speedpay.action.client.OKRenewalApplyClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="borrowproofDao">
+			<ref bean="BorrowproofDAO" />
+		</property>
+		<property name="renewalapplyDao">
+			<ref bean="RenewalapplyDAO" />
+		</property>
+	</bean>
+	
+	<bean id="getMessageClientAction" class="speedpay.action.client.GetMessageClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>
+		<property name="messageDao">
+			<ref bean="MessageDAO" />
+		</property>
+	</bean>
+	
+	<bean id="isUserClientAction" class="speedpay.action.client.IsUserClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>
+	</bean>
+	
+	<bean id="deleteMessageClientAction" class="speedpay.action.client.DeleteMessageClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="messageDao">
+			<ref bean="MessageDAO" />
+		</property>
+	</bean>
+	
+	<bean id="insertQrCodeClientAction" class="speedpay.action.client.InsertQrCodeClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="qrcodeDao">
+			<ref bean="QrcodeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="checkQrCodeClientAction" class="speedpay.action.client.CheckQrCodeClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="qrcodeDao">
+			<ref bean="QrcodeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="setQrCodeClientAction" class="speedpay.action.client.SetQrCodeClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="qrcodeDao">
+			<ref bean="QrcodeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="checkPaypasswordClientAction" class="speedpay.action.client.CheckPaypasswordClientAction" abstract="false"
+			lazy-init="default" autowire="default"  scope="prototype">
+		<property name="userDao">
+			<ref bean="UserDAO" />
+		</property>
+	</bean>
+	</beans>

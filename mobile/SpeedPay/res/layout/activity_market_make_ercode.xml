@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+        <FrameLayout
+            android:id="@+id/cameraPreview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+
+            <!-- <Button
+                android:id="@+id/ScanButton"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:text="Scan" /> -->
+
+	
+      	<TextView
+                android:id="@+id/market_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="购物列表"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" 
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+            
+            <TextView
+                android:id="@+id/textMarketItemList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </ScrollView>
+        
+        <Button
+                android:id="@+id/button_market_makeErcode"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/most_btn"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:text="生成二维码" />
+
+</LinearLayout>

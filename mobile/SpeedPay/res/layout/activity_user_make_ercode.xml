@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/rl_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#F2F2F2" >
+
+        <com.speedpay.ui.utils.SyncHorizontalScrollView
+            android:id="@+id/mHsv"
+            android:layout_width="fill_parent"
+            android:layout_height="70dip"
+            android:fadingEdge="none"
+            android:scrollbars="none" >
+
+            <RelativeLayout
+                android:id="@+id/rl_nav"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="#5AB0EB" >
+
+                <RadioGroup
+                    android:id="@+id/rg_nav_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="75dip"
+                    android:layout_alignParentTop="true"
+                    android:background="#F2F2F2"
+                    android:orientation="horizontal" >
+                </RadioGroup>
+
+                <ImageView
+                    android:id="@+id/iv_nav_indicator"
+                    android:layout_width="1dip"
+                    android:layout_height="10dip"
+                    android:layout_alignParentBottom="true"
+                    android:background="#5AB0EB"
+                    android:scaleType="matrix" />
+            </RelativeLayout>
+        </com.speedpay.ui.utils.SyncHorizontalScrollView>
+
+       
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/rl_tab"
+        android:layout_gravity="center"
+        android:background="#ffffff"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+</RelativeLayout>
