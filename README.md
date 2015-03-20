@@ -2,5 +2,7 @@ SpeedPay
 ========
 
 QR-Code Payment System based on Android.
-基于安卓系统的二维码支付软件，实现了客户端和服务器端的通信。
-数据库使用了MySQL。
+--------------------
+Use SSH framework to develop the SpeedPay server, and use MySQL to develop database.
+Use Apache Tomcat as Web server.
+--------------------
